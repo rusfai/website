@@ -6,13 +6,6 @@ body {
     align-items: center;
 }
 
-#heart{
-    font-size: 250px;
-    color:red;
-    padding: 0;
-    border: none;
-    background: none;
-}
 
 @keyframes heartbeat {
     0% {
@@ -36,6 +29,42 @@ body {
   }
 
 
-#heart:active {
+#create_heart:active {
 animation: heartbeat 1s;
+}
+
+
+
+#create_heart {
+  position: relative;
+  width: 100px;
+  height: 90px;
+  margin-top: 10px;
+  padding: 0;
+  border: none;
+  background: none;
+  touch-action: manipulation;
+}
+
+#create_heart::before, #create_heart::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 52px;
+  height: 80px;
+  border-radius: 50px 50px 0 0;
+  background: red;
+
+}
+
+#create_heart::before {
+  left: 50px;
+  transform: rotate(-45deg);
+  transform-origin: 0 100%;
+}
+
+#create_heart::after {
+  left: 0;
+  transform: rotate(45deg);
+  transform-origin: 100% 100%;
 }
