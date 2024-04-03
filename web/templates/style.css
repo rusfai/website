@@ -1,70 +1,38 @@
 body {
     height: 100vh;
-    background: #1b1b1b         ;
+    background: #1b1b1b;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-
-@keyframes heartbeat {
-    0% {
-      transform: scale( .75);
-    }
-    20% {
-      transform: scale( 1);
-    }
-    40% {
-      transform: scale( .75);
-    }
-    60% {
-      transform: scale( 1);
-    }
-    80% {
-      transform: scale( .75);
-    }
-    100% {
-      transform: scale( 1);
-    }
-  }
-
-
-#create_heart:active {
-animation: heartbeat 1s;
-}
-
-
-
-#create_heart {
-  position: relative;
-  width: 100px;
-  height: 90px;
-  margin-top: 10px;
-  padding: 0;
+.h_container button{
+  background-color: rgba(28,28,28,0);
   border: none;
-  background: none;
-  touch-action: manipulation;
 }
 
-#create_heart::before, #create_heart::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  width: 52px;
-  height: 80px;
-  border-radius: 50px 50px 0 0;
-  background: red;
+.heart img{
+  width: 200px;
 
 }
 
-#create_heart::before {
-  left: 50px;
-  transform: rotate(-45deg);
-  transform-origin: 0 100%;
+
+@keyframes heart {
+  0% {
+    transform: scale(1);
+    transform-origin: center center;
+    transition-timing-function: ease-out;
+  }
+  20% {
+    transform: scale(0.85);
+    transition-timing-function: ease-in;
+  }
+  40% {
+    transform: scale(1);
+    transition-timing-function: ease-out;
+  }
 }
 
-#create_heart::after {
-  left: 0;
-  transform: rotate(45deg);
-  transform-origin: 100% 100%;
+.heart img:active{
+  animation: heart 0.4s ease-in-out;
 }
