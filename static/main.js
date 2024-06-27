@@ -1,5 +1,10 @@
 window.onload = () =>{
 
+    if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+        window.open('https://habr.com/ru/articles/666278/');
+      } else {
+        window.open('https://practicum.yandex.ru/');
+    }
 
     const text = document.getElementById("buttonCountNumber"); //предыдущее число
     document.getElementById("heart").addEventListener("pointerdown", (event) => { //обработка нажатия

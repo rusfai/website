@@ -15,4 +15,4 @@ def blog():
     return 'Это блог с заметками о работе и увлечениях.'
 
 if __name__ == '__main__':
-	app.run(debug=True, port=5000)
+    app.run(host="192.168.1.101",port=5000)
