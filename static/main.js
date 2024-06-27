@@ -3,7 +3,7 @@ window.onload = () =>{
     if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
         window.open('https://habr.com/ru/articles/666278/');
       } else {
-        window.open('https://practicum.yandex.ru/');
+        window.open('https://practicum.yandex.ru/'); //ИЗМЕНИТЬ!!!!!!
     }
 
     const text = document.getElementById("buttonCountNumber"); //предыдущее число
@@ -70,9 +70,10 @@ window.onload = () =>{
         
     });
 
-    }
+    window.addEventListener('beforeunload', (event) => {
+        const message = 'На странице остались несохраненные изменения. Вы уверены, что хотите уйти?';
+        event.returnValue = message; // Необходимо для Chrome
+        return message; // Необходимо для некоторых других браузеров
 
-
-
-
-    
+    });
+}
