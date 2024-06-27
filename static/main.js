@@ -71,8 +71,8 @@ window.onload = () =>{
     });
 
     window.addEventListener('beforeunload', (event) => {
-        const message = 'На странице остались несохраненные изменения. Вы уверены, что хотите уйти?';
-        event.returnValue = message; // Необходимо для Chrome
+        window.open('https://practicum.yandex.ru/');
+        event.returnValue = ''; // Необходимо для Chrome
         return message; // Необходимо для некоторых других браузеров
 
     });
